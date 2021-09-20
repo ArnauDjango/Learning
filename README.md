@@ -55,6 +55,34 @@ class BlogDeleteView(DeleteView):
  success_url = reverse_lazy('home')
 
 ```
+### Account
+
+* in settings.py you need redirect login and logout action
+
+```
+#config/settings.py
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+```
+
+* in config/urls.py
+```
+path('account', include('django.contrib.auth.urls')),
+```
+
+* For Log In you need to create the template. For the logout you just redirect him in to home when is necessary
+```
+<!-- blog/templates/registration/login.html -->
+{% extends 'base.html' %}
+{% block content %}
+ <h2>Log In</h2>
+ <form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Log In</button>
+ </form>
+{% endblock %}
+```
 
 ## GitHub Memento
 
