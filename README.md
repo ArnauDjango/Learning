@@ -70,7 +70,7 @@ LOGOUT_REDIRECT_URL = 'home'
 path('account', include('django.contrib.auth.urls')),
 ```
 
-* For Log In you need to create the template. For the logout you just redirect him in to home when is necessary
+* For Log In you need to create the template. For the Log Out you nothing to do because it redirected in ``config/settings.py``
 ```
 <!-- blog/templates/registration/login.html -->
 {% extends 'base.html' %}
