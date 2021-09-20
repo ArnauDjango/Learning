@@ -43,6 +43,18 @@ example in this setttings of post_detail in urls.py the pk is send to this url
 path('post/<int:pk>/, BlogDetailView.as_view(), name='post_detail')
 ```
 
+#### Forms delete
+* Views
+```
+from django.views.generic.edit import DeleteView
+from django.urls import reverse_lazy
+
+class BlogDeleteView(DeleteView):
+ model = Post
+ template_name = 'post_delete.html'
+ success_url = reverse_lazy('home')
+
+```
 
 ## GitHub Memento
 
