@@ -23,6 +23,26 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))] # new
 
 ```
+### Forms
+
+> In general when the object as created the url take probleme beacause is no created route for the new element ! For resolve this you need to take redirection on models def
+
+```
+#blog>models.py
+from django.urls import reverse
+ 
+class [...]
+
+  def get_absolute_url(self):
+    return reverse('post_detail', args=[str(self.id)])
+```
+
+example in this setttings of post_detail in urls.py the pk is send to this url
+
+```
+path('post/<int:pk>/, BlogDetailView.as_view(), name='post_detail')
+```
+
 
 ## GitHub Memento
 
