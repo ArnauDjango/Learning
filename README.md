@@ -67,7 +67,7 @@ LOGOUT_REDIRECT_URL = 'home'
 
 * in config/urls.py
 ```
-path('account', include('django.contrib.auth.urls')),
+path('accounts', include('django.contrib.auth.urls')),
 ```
 
 * For Log In you need to create the template. For the Log Out you nothing to do because it redirected in ``config/settings.py``
